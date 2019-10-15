@@ -1,0 +1,103 @@
+
+<meta charset="utf 8">
+<script>//mostra uma mensagem do parâmetro
+// alert("podemos fazer mais com javascript!");
+
+//document.write("minha idade e: ");
+//document.write(21);
+
+ //declarando uma variavel
+//var ano = 2019;
+//document.write("<h1> eu nasci em : " + (ano - 19) + "</h1> <br>");
+
+//declarando uma função em javascript
+
+function mostra (frase){
+    document.write(frase + "<br>");
+};
+
+// chamando uma função em javascript
+//var ano = 2019;
+//mostra("eu nasci em : " + (ano -19));
+
+
+//document.write("ola mundo! <br>");
+//document.write("esse é meu segundo programa");
+//console.log("esta mensagem aparece apenas no log");
+
+//calculando o imc
+/*
+var peso = 65;
+var altura = 1.78;
+var imc = peso / (altura * altura);
+mostra("meu IMC é:  " + Math.round(imc));
+*/
+/*
+var nome = prompt("bom dia! qual é o seu nome?");
+document.write("bem vindo, " + nome + "<br>"); 
+var idade = prompt(nome + ", quantos anos voce tem?");
+document.write(nome + " tem " + idade + " anos.");
+*/
+/*
+var primeira = function() {
+console.log("1 - antes");
+segunda();
+console.log("1 - depois");
+};
+var segunda = function() {
+console.log("2 - antes");
+terceira();
+console.log("2 - depois");
+};
+var terceira = function() {
+console.log("3");
+};
+primeira();
+*/
+
+/*
+var vitorias = prompt("Quantos jogos o CSA Futebol Clube venceu?");
+var empates = prompt("Quantos jogos o CSA Futebol Clube empatou?");
+var pontos = (parseInt(vitorias) * 3) + parseInt(empates);
+if(pontos > 42) {
+mostra("O CSA futebol clube não será rebaixado!");
+} else {
+mostra("Lamento informar.<br> Mas acho que o CSA futebol clube será rebaixado");
+}
+*/
+
+/*
+var numeroPensado = Math.round(Math.random() * 10);
+var chute = prompt("Já pensei. Qual você acha que é?");
+if(chute == numeroPensado) {
+mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+} else {
+mostra("Você errou! Eu tinha pensado no " + numeroPensado);
+}
+*/
+
+/*
+var anoDeCopa = 1958;
+while(anoDeCopa <= 2022) {
+alert(anoDeCopa + " tem copa!");
+anoDeCopa = anoDeCopa + 4;
+}
+*/
+
+/*
+var numero = 7;
+for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+mostra( multiplicador * numero);
+}
+*/
+
+
+for(var linha = 0; linha < 10; linha = linha + 1) {
+for(var coluna = 0; coluna < 10; coluna = coluna + 1) {
+document.write( "|" + "*" + "_" + "*");
+}
+document.write("<br>"  );
+}
+
+
+</script> 
