@@ -11,17 +11,66 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand">Formulário de Cadastro</a>
+        <a class="navbar-brand">Formulário </a>
     </nav>
 
     <script>
-        function validateForm() {
-            var x = document.forms["myForm"]["fname"].value;
-            if (x == "") {
-                alert("Name must be filled out");
+        function myfunction() {
+            validanome();
+            validaemail();
+            validasenha();
+        }
+        Confirma
+        function validanome() {
+            var nome = document.getElementById("name");
+            if (nome.value == "") {
+                alert("campo do nome obrigatorio");
                 return false;
             }
         }
+        function validaemail() {
+            var Email = document.getElementById("Email")
+            if (Email.value == "") {
+                alert("campo de email obrigatorio");
+                return false;
+            }
+            else if (Email.value.indexOf("@") == -1) {
+                alert("email incorreto");
+            }
+            else if (Email.value.indexOf(".") == -1) {
+                alert("email incorreto");
+            }
+        }
+        function validasenha() {
+
+            var senha = document.getElementById("Senha");
+            var confirma = document.getElementById("Confirma");
+
+            console.log("Chegou aqui");
+
+            if (senha.value == "") {
+                alert("campo de senha obrigatorio");
+                return false;
+            } 
+            else if(senha.value.length < 6) {
+           alert("A senha deve conter no minímo 6 digitos!");
+           return false;
+       }
+            
+            else if (senha.value != confirma.value) {
+                alert("senhas diferentes");
+                return false;
+            }
+            
+        }
+        function preferencia() {
+            var preferencia = document.getElementById("checker")
+            if (checker == "") {
+                alert("maruqe pelo menos um!")
+                return false;
+            }
+        }
+
     </script>
 
     <br>
@@ -30,26 +79,29 @@
 </head>
 
 <body class="container">
-    <form  name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    <form>
         <div class="form-group">
             <label for="exampleInputEmail1">Nome Completo</label>
             <input type="text" class="form-control" id="name" aria-describedby="name"
                 placeholder="Ex: Maria da Silva Gomes">
-            <small id="emailHelp" class="form-text text-muted">Não compartilharemos seu nome com mais ninguém.</small>
+            <small id="emailHelp" class="form-text text-muted">Digite o nome completo.</small>
+            <p id="msgERROR"></p>
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Não compartilharemos seu email com mais ninguém.</small>
+            <label for="exampleInputEmail1">Email</label>else if(senha.value.length < 6) {
+                alert("A senha deve conter no minímo  digitos!");
+                return false;
+            }
+            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">no email lembre-se do @.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+            <input type="password" class="form-control" id="Senha" placeholder="Senha">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Confirme sua Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+            <input type="password" class="form-control" id="Confirma" placeholder="confirme a senha">
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Módulo</label>
@@ -61,7 +113,7 @@
         </div>
 
         <label for="Preferências">Preferências:</label>
-        <div class="form-group form-check">
+        <div class="form-group form-check" id="checker">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Programação WEB 1</label>
         </div>
@@ -73,8 +125,8 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Empreendedorismo Digital</label>
         </div>
-        <button type="save" class="btn btn-primary">Salvar</button>
-        <button type="clear" class="btn btn-primary">Limpar</button>
+        <input type="button" value="Salvar" class="btn btn-primary" onclick="return myfunction()"/>
+        <button type="clear" class="btn btn-primary" onclick="">Limpar</button>
     </form>
 
 
