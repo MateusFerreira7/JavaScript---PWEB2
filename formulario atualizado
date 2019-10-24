@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulário JS</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand">Formulário </a>
+    </nav>
+
+    <script>
+        function myfunction() {
+            validanome();
+            validaemail();
+            validasenha();
+        }
+        Confirma
+        function validanome() {
+            var nome = document.getElementById("name");
+            if (nome.value == "") {
+                alert("campo do nome obrigatorio");
+                return false;
+            }
+        }
+        function validaemail() {
+            var Email = document.getElementById("Email")
+            if (Email.value == "") {
+                alert("campo de email obrigatorio");
+                return false;
+            }
+            else if (Email.value.indexOf("@") == -1) {
+                alert("email incorreto");
+            }
+            else if (Email.value.indexOf(".") == -1) {
+                alert("email incorreto");
+            }
+        }
+        function validasenha() {
+            var senha = document.getElementById("Senha");
+            var confirma = document.getElementById("Confirma");
+            console.log("Chegou aqui");
+            if (senha.value == "") {
+                alert("campo de senha obrigatorio");
+                return false;
+            }
+            else if (senha.value.length < 6) {
+                alert("A senha deve conter no minímo 6 digitos!");
+                return false;
+            }
+
+            else if (senha.value != confirma.value) {
+                alert("senhas diferentes");
+                return false;
+            }
+
+        }
+        function preferencia() {
+            var preferencia = document.getElementById("checker")
+            if (checker == "") {
+                alert("marque pelo menos um!")
+                return false;
+            }
+        }
+    </script>
+
+    <br>
+    <br>
+
+</head>
+
+<body class="container">
+    <form class="was-validated">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nome Completo</label>
+            <input type="text" class="form-control" id="name" aria-describedby="name"
+                placeholder="Ex: Maria da Silva Gomes" required>
+            <small id="emailHelp" class="form-text text-muted">Digite o nome completo.</small>
+            <p id="msgERROR"></p>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <small id="emailHelp" class="form-text text-muted">no email lembre-se do @.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Senha</label>
+            <input type="password" class="form-control" id="Senha" placeholder="Senha" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Confirme sua Senha</label>
+            <input type="password" class="form-control" id="Confirma" placeholder="confirme a senha" required>
+        </div>
+
+        <div class="form-group">
+            <select class="custom-select" required>
+                <option value="">módulo</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <div class="invalid-feedback">Example invalid custom select feedback</div>
+        </div>
+    
+        <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked"
+                required>
+            <label class="custom-control-label" for="customControlValidation2">ADSO</label>
+            <div class="invalid-feedback"> example invalid feedback text</div>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked"
+                required>
+            <label class="custom-control-label" for="customControlValidation2">PWEB1</label>
+            <div class="invalid-feedback"> example invalid feedback text</div>
+        </div>
+        <div class="custom-control custom-radio mb-3">
+            <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked"
+                required>
+            <label class="custom-control-label" for="customControlValidation3">programação movel</label>
+            <div class="invalid-feedback"> example invalid feedback text</div>
+        </div>
+
+        <input type="button" value="Salvar" class="btn btn-primary" onclick="return myfunction()" />
+        <button type="clear" class="btn btn-primary" onclick="">Limpar</button>
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
